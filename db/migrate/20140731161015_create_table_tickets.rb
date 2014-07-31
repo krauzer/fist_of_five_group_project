@@ -1,8 +1,8 @@
 class CreateTableTickets < ActiveRecord::Migration
   def change
     create_table :tickets do |t|
-      t.belongs_to :student
-      t.integer :coach_id
+      t.references :student
+      t.references :coach
       t.text :description
       t.string :category
       t.boolean :resolved, default: :false
