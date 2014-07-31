@@ -5,8 +5,6 @@ $(document).ready(function() {
 		setTimeout(refreshTickets, 10000);
 	})
 
-	$('#')
-
 });
 
 
