@@ -1,7 +1,14 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  if ($("#submit_ticket") != null) {
+    auto_refresh();
+  };
+
+  function auto_refresh() {
+    var randomnumber = Math.floor(Math.random() * 100);
+      $('#queue').text('I am getting refreshed every 3 seconds..! Random Number ==> '+ randomnumber);
+  };
+
+  var refreshID = setInterval(auto_refresh, 1000);
+
 });
