@@ -1,14 +1,18 @@
 $(document).ready(function() {
 	console.log("works")
 
-	setTimeout(refreshTickets, 10000);
- 
+	$('#tickets').ready(function(){
+		setTimeout(refreshTickets, 10000);
+	})
+
+	$('#')
+
 });
 
 
 function refreshTickets() { 
 	// event.preventDefault();
-	window.location.href = window.location.href; 
+	window.location.href = window.location.href;  //BUGBUG
 	$.ajax({
 		type: 'get',
 		url: '/tickets',
