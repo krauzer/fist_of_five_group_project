@@ -10,6 +10,6 @@ User.create(first_name: "Mo", last_name: "Ramchandani", role_type: "coach", emai
 
 @categories = ["ActiveRecord", "Sinatra", "RESTful routing", "AJAX", "OOJS", "jQuery", "CSS"]
 
-User.all.each do |user|
+User.where(role_type: "student").each do |user|
 	3.times { user.tickets << Ticket.create(description: "test ticket", category: @categories.sample) }
 end
