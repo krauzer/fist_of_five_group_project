@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-	has_secure_password
-
-	has_many :tickets
+  # Remember to create a migration!
+  has_many :tickets
 end
