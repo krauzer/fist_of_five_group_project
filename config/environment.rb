@@ -15,6 +15,12 @@ require 'pg'
 require 'active_record'
 require 'logger'
 
+# added for the project
+require 'dotenv'
+Dotenv.load
+require 'oauth'
+
+
 require 'sinatra'
 require "sinatra/reloader" if development?
 
@@ -24,6 +30,13 @@ require 'erb'
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
 APP_NAME = APP_ROOT.basename.to_s
+
+CLIENT = Twitter::REST::Client.new do |config|
+  config.consumer_key        = ENV["CONSUMER_KEY"]
+  config.consumer_secret     = ENV["CONSUMER_SECRET"]
+  config.access_token        = ENV["ACCESS_TOKEN"]
+  config.access_token_secret = ENV["ACCESS_SECRET"]
+end
 
 # Set up the controllers and helpers
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
