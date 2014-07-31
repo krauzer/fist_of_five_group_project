@@ -31,3 +31,7 @@ post '/users' do
     erb :sign_up
   end
 end
+
+get '/users/:user_id/tickets/:ticket_id' do
+  
+end
