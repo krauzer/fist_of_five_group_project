@@ -32,7 +32,7 @@ delete '/my_tickets/:id' do
 end
 
 patch '/my_tickets/:id' do
-  Ticket.find(params[:id]).update(resolved: true)
+  Ticket.update(params[:id], resolved: true)
   return "marked ticket as resolved"
   erb :index
 end

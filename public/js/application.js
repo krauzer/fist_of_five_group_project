@@ -34,9 +34,7 @@ $(document).ready(function() {
 			method: "delete",
 			data: id
 		}).success(function(data){
-			console.log("ajax remove")
-			console.log(data)
-			console.log(id)
+			window.location.reload();
 		})
 	})
 
@@ -49,9 +47,7 @@ $(document).ready(function() {
 			method: "patch",
 			data: id
 		}).success(function(data){
-			console.log("ajax resolve")
-			console.log(data)
-			console.log(id)
+			window.location.reload();
 		})
 	})
 
