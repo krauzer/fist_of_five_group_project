@@ -32,6 +32,8 @@ post '/users' do
   end
 end
 
+
+#profile page
 get '/users/:user_id' do
   @user = User.find_or_create_by(username: params[:username])
   @image = @user.restful_user.profile_image_url
@@ -42,6 +44,7 @@ get '/users/:user_id' do
 
   erb :"user/profile"
 end
+
 
 get '/users/:user_id/tickets/:ticket_id' do
 
@@ -65,3 +68,14 @@ get '/auth' do
   erb :index
 
 end
+
+  
+
+delete '/users/:user_id' do 
+return 401 unless params[:user_id].to_i == session[:user_id].to_i
+  session.clear
+end
+
+
+
+

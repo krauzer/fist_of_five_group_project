@@ -7,4 +7,8 @@ class Ticket < ActiveRecord::Base
     where("created_at >= ?", Time.zone.now.beginning_of_day)
   end
 
+  def self.fresh
+  	where(created_at: (Time.now.midnight - 1.day)..Time.now)
+  end
+
 end
