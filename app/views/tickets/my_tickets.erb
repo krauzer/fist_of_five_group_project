@@ -1,0 +1,32 @@
+<div class="container">
+
+  <body>
+    <h1>fist to five</h1>
+
+    <h2>submit a ticket</h2>
+      <form action="">
+        <br>What do you need help with?<br>
+        <br><input type="text" name="description"required></input><br>
+        <br>Where are you? Enter the station #.<br>
+        <br><input type="number" name="location" required></input><br>
+        <br><input type="submit" id="submit_ticket"></input>
+      </form>
+
+    <h2>your tickets</h2>
+      <ol id="ticket_history">
+      <!-- querying in view - bad practice - fix later!! -->
+      <% Ticket.all.each do |i| %>
+      <li><% if i.resolved == false %>
+          <%= i.description %>
+          <form name="remove" action="">
+            <input type="hidden" name="ticket_id" value="<%=i.id%>">
+            <input type="submit" id="remove" value="remove">
+            <input type="submit" id="resolved" value="resolved">
+          </form>
+          <% end %>
+      <% end %>
+      </li>
+      </ol>
+  </body>
+
+</div>
