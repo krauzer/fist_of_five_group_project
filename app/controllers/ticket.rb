@@ -22,12 +22,12 @@ post '/my_tickets' do
   # Extra feature: add category as well
   Ticket.create(student_id: 1, description: params[:description])
   return "added ticket"
-  erb :my_tickets
+  erb :index
 end
 
 delete '/my_tickets/:id' do
-  puts params[:id].to_i
-  Ticket.find(id).destroy
+  Ticket.find(params[:id]).destroy
   return "removed ticket"
+  erb :index
 end
 

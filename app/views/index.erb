@@ -17,9 +17,10 @@
       <!-- querying in view - bad practice - fix later!! -->
       <% Ticket.all.each do |i| %>
       <li><%= i.description %>
-          <form action="">
-            <input type="hidden" name="ticket_id" value="<%=i.id%>"></input>
-            <input type="submit" id="remove" value="remove"></form>
+          <form name="remove" action="">
+            <input type="hidden" name="ticket_id" value="<%=i.id%>">
+            <input type="submit" id="remove" value="remove">
+          </form>
       <% end %>
       </li>
       </ul>

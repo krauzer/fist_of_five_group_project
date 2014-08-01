@@ -25,14 +25,18 @@ $(document).ready(function() {
 	})
 	})
 
-	$("#remove").click(function(e){
+	$("input[id=remove]").click(function(e){
 		e.preventDefault();
+		console.log("click")
+		var id = $("input[type=hidden]").val();
 		$.ajax({
-			url: "/my_tickets/" + $("input[type=hidden]").val(),
+			url: "/my_tickets/" + id,
 			method: "delete",
-			data: $("input[type=hidden]").val()
+			data: id
 		}).success(function(data){
+			console.log("ajax remove")
 			console.log(data)
+			console.log(id)
 		})
 	})
 
