@@ -38,7 +38,11 @@ get '/users/:user_id' do
   erb :"user/profile"
 end
 
+get '/users/:user_id/tickets' do 
+  erb :'user/student_ticket'
+end
 
+# indiviual tickets
 get '/users/:user_id/tickets/:ticket_id' do
   
 end

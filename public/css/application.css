@@ -17,17 +17,29 @@ body{
 	text-align: center;
 	line-height: 70px;
 }
+
 .fa-6 {
  	font-size: 4em;
 }
+
 .tick{
 	font-size: 4em;
 	color: white
 }
+
 p{
 	color: white;
 }
-.home{
+#home{
+	height: 600px;
+	width: 1400px;
+	border: 1px solid #0341D0;
+	box-shadow: 2px 2px 10px #888888;
+	background-image:url("http://upload.wikimedia.org/wikipedia/commons/4/49/Notophthalmus_viridescensPCCA20040816-3983A.jpg");
+	background-repeat: none;
+	background-position: right top;
+	margin-top: -3px;
+	margin-left: -80px;
 
 }
 ._tickets{
@@ -39,7 +51,6 @@ p{
 	border: 1px solid #0341D0;
 	box-shadow: 2px 2px 10px #888888;
 	border-radius: 15px;
-	
 	overflow: scroll;
 }
 #refresh-ticket{
@@ -73,7 +84,32 @@ a {
 	font-size: 1.7em;
 	margin-right: 2em;
 }
-
+aside{
+	float: right;
+	background-color: #366DEB;
+	border: 1px solid #0341D0;
+	border-radius: 15px;
+	padding: 1em;
+	margin-right: 2em;
+}
+section{
+	width: 70%;
+	margin-top: 2em;
+	margin-left: 2em;
+	background-color: #366DEB;
+	border: 1px solid #0341D0;
+	padding: 1em;
+	border-radius: 15px;
+	box-shadow: 1px 1px 1px #888888;
+}
+#profile{
+	color: #022679;
+	background-color: #00C6C6;
+	border: 1px solid #0341D0;
+	border-radius: 15px;
+	padding: 1em;
+	width: 300px;
+}
 
 .oneTicket {
 	padding: 5px;
