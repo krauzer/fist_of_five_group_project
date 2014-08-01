@@ -2,10 +2,6 @@ $(document).ready(function() {
 	console.log("works")
 
 	$('#newTicket').hide();
-
-	if ($('span.label').attr('value') === "resolved") {
-		$(this).parent().parent().css("border-color", "#FF0000")
-	};
 	
 	$("form#refreshAll").submit(function(e){
 		e.preventDefault();
