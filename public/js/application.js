@@ -17,22 +17,7 @@ $(document).ready(function() {
 	});
 
 	$('form.resolvedButton').click(function(e){
-		// e.preventDefault();
-		$(this).parent().css("border-color", "#FF0000")
-		// ticket_id = $(this).attr('value')
-		
-		// console.log("resolved button works");
-		// $.ajax ({
-		// 	type:'post',
-		// 	url: '/tickets/'+ticket_id+'',
-		// 	data: $(this).serialize()
-		// }).success(function(response){
-		// 	// console.log("works");
-		// 	// console.log(response)
-		// 	$('.tickets').hide().html(response).fadeIn('fast');
-		// }).fail(function(response){
-		// 	console.log("doesn't work")
-		// })
+		$(this).parent().css("border-color", "#FF0000")		
 	})
 
 	$('#createTicket').on('click', openForm);
