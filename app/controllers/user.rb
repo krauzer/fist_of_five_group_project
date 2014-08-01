@@ -1,10 +1,10 @@
-get '/user/login' do 
+get '/user/login' do
 	#User Login page
-	erb :login 
+	erb :login
 end
 
-post '/user/login' do 
-	#Set user from login form 
+post '/user/login' do
+	#Set user from login form
 	  @email = params[:email]
   user = User.authenticate(@email, params[:password])
   if user
@@ -32,6 +32,6 @@ post '/users' do
   end
 end
 
-get '/users/:user_id/tickets/:ticket_id' do
-  
-end
+# get '/users/:user_id/tickets/:ticket_id' do
+
+# end
