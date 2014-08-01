@@ -4,6 +4,7 @@
 			<p><span class="label">Category:</span> <%= ticket.category %></p>
 			<p><span class="label">Description: </span><%=ticket.description %></p>		
 			<p><span class="label" value="resolved">Resolved:</span> Yes</p>
+			<p><span class="label">Student:</span> <%= User.find(ticket.student_id).first_name %> <%= User.find(ticket.student_id).last_name %></p>
 
 		</div>
 	<% else %>				
