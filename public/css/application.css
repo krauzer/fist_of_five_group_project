@@ -1,9 +1,25 @@
-.container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+body{
+	background-color: #20E7E7;
 }
-th {
-  text-align: left;
+
+.navbars {
+	background-color: #366DEB;
+	height: 6em;
+}
+.fa-6 {
+ 	font-size: 5em;
+}
+.home{
+
+}
+
+ul li {
+	list-style-type: none;
+	display: inline-block;
+	color: white;
+}
+a {
+	color: white;
+	font-size: 2em;
+	margin-right: 2em;
 }
