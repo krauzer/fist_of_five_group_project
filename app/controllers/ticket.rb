@@ -26,3 +26,28 @@ post '/tickets/:id' do #route for coach to mark a ticket as resolved
 	redirect '/tickets'
 end
 
+##### Student Tickets #####
+
+get '/my_tickets' do
+  erb :'tickets/my_tickets'
+end
+
+post '/my_tickets' do
+  # Need to create with user once login/out is implemented.
+  # Extra feature: add category as well
+  Ticket.create(student_id: 1, description: params[:description])
+  return "added ticket"
+  erb :'tickets/my_tickets'
+end
+
+delete '/my_tickets/:id' do
+  Ticket.find(params[:id]).destroy
+  return "removed ticket"
+  erb :'tickets/my_tickets'
+end
+
+patch '/my_tickets/:id' do
+  Ticket.update(params[:id], resolved: true)
+  return "marked ticket as resolved"
+  erb :'tickets/my_tickets'
+end
