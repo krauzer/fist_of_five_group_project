@@ -1,5 +1,5 @@
 get '/tickets' do #route for coaches to see all tickets
-	@tickets = Ticket.where(created_at: (Time.now.midnight - 1.day)..Time.now)
+	@tickets = Ticket.fresh
 	p @tickets
 
 	@students = User.where(role_type: "student")
