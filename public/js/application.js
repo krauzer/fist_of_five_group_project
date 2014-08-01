@@ -5,7 +5,7 @@ $(document).ready(function() {
 	
 	$("form#refreshAll").submit(function(e){
 		e.preventDefault();
-		setTimeout(refreshTickets, 700);
+		setTimeout(refreshTickets, 200);
 
 		console.log("refresh button works")
 	// window.location.href = window.location.href;  
