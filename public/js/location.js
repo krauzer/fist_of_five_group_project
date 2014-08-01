@@ -5,16 +5,18 @@ $(document).ready(function(){
 	$("form[name='rooms']").change(function(e){
 		console.log("changed the form value");
 		if ($("form[name='rooms'] option:selected").val() == "workstations"){
-			console.log("selected workstations");
 			$("#work_area").show();
 			$("#work_area li").click(function(e){
-				console.log(this);
+				var desk = this.id;
 				$(this).css("background-color","yellow");
+				var studentLocation = $("form[name='rooms'] option:selected").val().concat(desk);
+				console.log(studentLocation);
 			}); // close li.click
 		} // close if statement
 	}); // close form.change
 	$("#rooms").submit(function(e){
 		e.preventDefault();
 		console.log("submitted the form");
+		console.log("#rooms");
 	}) // close rooms.submit
 }); // close document.read
