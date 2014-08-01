@@ -16,5 +16,5 @@ Teachers and students connected at last!
 ### Team Dynamic and Git Workflow
 
 ### Links
+
 - [Google Doc](https://docs.google.com/document/d/1qaHB8lEV2Ko1Sq-zqUdQqP1UEJ39XCr2GQJzUR8xi2g/edit)
-- 
