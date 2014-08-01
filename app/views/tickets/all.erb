@@ -1,10 +1,18 @@
 <div class="container">
-	<h3>Today's Tickets</h3>
-	<form id="refreshAll">
-    		<button type="submit">Refresh Tickets</button>
+	<h3>Today's Tickets <%= Time.now %></h3>
+			
+	<div class="_tickets">
+		<div id="container_header">
+			<ul>
+				<li><i class="fa fa-ticket tick"></i></li>
+				<li id="ticket_button"><form id="refreshAll">
+    		<button type="submit">Refresh Tickets</button></li>
 			</form>
-	<div class="tickets">
+			</ul>
+		</div>
+		<div id="ticket_sub">
 		<%= erb :'partials/_all_tickets', :layout => false  %>
 	</div>
+	</div>	
 </div>
 

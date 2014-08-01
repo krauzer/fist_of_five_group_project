@@ -1,7 +1,17 @@
-<% @profile_target = User.find(params[:user_id]) %>
-<h3><%= @profile_target.first_name %> <%= @profile_target.last_name %></h3>
-<h4><%= @profile_target.role_type.capitalize %></h4>
+<div class="container">
+  <h3>Profile </h3>
+  <div class="_tickets">
+    <div id="ticket_sub">
+    <% @user = User.find(params[:user_id]) %>
+    <h2 class="label"><%= @user.first_name %> <%= @user.last_name %></h2>
+    <h4 class="label"><%= @user.role_type.capitalize %></h4>
 
-<img src="http://www.gravatar.com/avatar/<%= gravatar_hash(@profile_target.email) %>">
+    <img src="http://www.gravatar.com/avatar/<%= gravatar_hash(@user.email) %>">
 
-<a href="mailto:<%= @profile_target.email %>">Email <%= @profile_target.first_name %></a>
+    <a href="mailto:<%= @user.email %>">Email <%= @user.first_name %></a>
+  </div>
+  </div>
+</div>
+
+
+

@@ -1,5 +1,7 @@
 get '/tickets' do #route for coaches to see all tickets
-	@tickets = Ticket.all	
+	@tickets = Ticket.fresh
+	p @tickets
+
 	@students = User.where(role_type: "student")
 	erb :'tickets/all'
 end
