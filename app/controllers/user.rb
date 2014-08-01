@@ -14,7 +14,7 @@ post '/user/login' do
   else
     # an error occurred, re-render the sign-in form, displaying an error
     @error = "Invalid email or password."
-    erb :login
+    erb :"user/login"
   end
 end
 
@@ -28,7 +28,7 @@ post '/users' do
     redirect '/'
   else
     # an error occurred, re-render the sign-up form, displaying errors
-    erb :sign_up
+    erb :"user/ssign_up"
   end
 end
 
