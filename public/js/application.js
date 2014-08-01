@@ -66,7 +66,7 @@ function refreshTickets() {
 	}).success(function(response){
 		console.log("ajax works");
 		console.log(response)
-		$('.tickets').hide().html(response).fadeIn('fast');
+		$('#ticket_sub').hide().html(response).fadeIn('fast');
 	}).fail(function(response){
 		console.log("Doesn't not work")
 	})
