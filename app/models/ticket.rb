@@ -11,4 +11,10 @@ class Ticket < ActiveRecord::Base
   	where(created_at: (Time.now.midnight - 1.day)..Time.now)
   end
 
+  def age 
+  	minutes = ((Time.now - created_at)/60).to_i
+  	minutes.divmod(60)
+
+  end
+
 end
