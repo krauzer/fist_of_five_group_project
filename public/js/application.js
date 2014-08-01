@@ -47,7 +47,7 @@ function refreshTickets() {
 		console.log(response)
 		$('.tickets').hide().html(response).fadeIn('fast');
 	}).fail({
-		console.log("Doesn't not work")
+		// console.log("Doesn't not work")
 	})
 }
 
