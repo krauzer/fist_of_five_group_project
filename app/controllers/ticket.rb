@@ -1,5 +1,6 @@
 get '/tickets' do #route for coaches to see all tickets
 	@tickets = Ticket.all	
+	erb :'tickets/all'
 end
 
 
