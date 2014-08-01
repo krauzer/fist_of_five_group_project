@@ -75,7 +75,7 @@ a {
 }
 
 
-.oneTicket {
+.oneTicketResolved {
 	padding: 5px;
 	float: left;
 	width: 210px;
@@ -83,4 +83,18 @@ a {
 	margin: 0 15px 15px 0;
 	border-radius: 15px;
 	overflow: scroll;
+	height: 220px;
 }
+
+.oneTicketNotResolved {
+	padding: 5px;
+	float: left;
+	width: 210px;
+	border: 3px solid #FF0000;
+	margin: 0 15px 15px 0;
+	border-radius: 15px;
+	overflow: scroll;
+	height: 220px;
+	
+}
+
