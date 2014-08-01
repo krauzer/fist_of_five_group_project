@@ -1,22 +1,21 @@
-.container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
-  /*height: 100%;*/
-}
+
 th {
   text-align: left;
 }
 body{
 	background-color: #20E7E7;
 }
-
+.label{
+	font-size: 1em;
+	color:#00EEEE;
+}
 .navbars {
 	border-bottom: 1px solid #0341D0;
-
 	background-color: #366DEB;
 	height: 6em;
+	box-shadow: 2px 2px 10px #888888;
+	text-align: center;
+	line-height: 70px;
 }
 .fa-6 {
  	font-size: 4em;
@@ -25,21 +24,23 @@ body{
 	font-size: 4em;
 	color: white
 }
-
+p{
+	color: white;
+}
 .home{
 
 }
 ._tickets{
 	margin: auto;
-	margin-top: 3em;
+	margin-top: 2em;
 	height: 500px;
 	width: 90%;
 	background-color: #366DEB;
 	border: 1px solid #0341D0;
 	box-shadow: 2px 2px 10px #888888;
 	border-radius: 15px;
-	padding: 1em;
-
+	
+	overflow: scroll;
 }
 #refresh-ticket{
 	font-size: .5em;
@@ -50,6 +51,23 @@ ul li {
 	display: inline-block;
 	color: white;
 }
+#ticket_button{
+	color:black;
+}
+#container_header{
+	position:fixed;
+	background-color: #0341D0;
+	width: 80.5%;
+	border-radius: 15px;
+	box-shadow: 1px 1px 1px #888888;
+	text-align: bottom;
+}
+
+#ticket_sub{
+	margin-top: 5em;
+	margin-left:5em;
+}
+
 a {
 	color: white;
 	font-size: 1.7em;
@@ -58,8 +76,11 @@ a {
 
 
 .oneTicket {
+	padding: 5px;
 	float: left;
-	width: 200px;
-	border: 1px solid #999;
+	width: 210px;
+	border: 3px solid #22F322;
 	margin: 0 15px 15px 0;
+	border-radius: 15px;
+	overflow: scroll;
 }
