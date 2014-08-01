@@ -32,6 +32,7 @@ post '/users' do
   end
 end
 
+# display user profile
 get '/users/:user_id' do
   erb :"user/profile"
 end
