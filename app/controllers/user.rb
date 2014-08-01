@@ -28,7 +28,7 @@ post '/users' do
     redirect '/'
   else
     # an error occurred, re-render the sign-up form, displaying errors
-    erb :"user/ssign_up"
+    erb :"user/sign_up"
   end
 end
 
