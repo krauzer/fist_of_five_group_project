@@ -1,6 +1,6 @@
 get '/user/login' do 
 	#User Login page
-	erb :login 
+	erb :"user/login" 
 end
 
 post '/user/login' do 
