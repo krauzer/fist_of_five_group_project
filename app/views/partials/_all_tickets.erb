@@ -4,19 +4,26 @@
 			<p><span class="label">Category:</span> <%= ticket.category %></p>
 			<p><span class="label">Description: </span><%=ticket.description %></p>		
 			<p><span class="label" value="resolved">Resolved:</span> Yes</p>
+
 		</div>
-	<% else %>
-					
+	<% else %>				
 		<div class="oneTicketNotResolved">
 			<p><span class="label">Category:</span> <%= ticket.category %></p>
 			<p><span class="label">Description: </span><%=ticket.description %></p>		
 			<p><span class="label" value="not-resolved">Resolved:</span> No</p>	
 			<p><span class="label">Student:</span> <%= User.find(ticket.student_id).first_name %> <%= User.find(ticket.student_id).last_name %></p>
-			<br>
+			<p><span class="label">Created: </span>
+				<% if ticket.age[0] != 0 %>
+				<%= ticket.age[0] %> hrs, 
+				<%= ticket.age[1] %> min ago
+				<% else %>
+				<%= ticket.age[1] %> minutes ago
+				<% end %>
+			</p>
 			<form class="resolvedButton" name="resolved" method="post" action="/tickets/<%= ticket.id %>" value="<%= ticket.id %>">
     		<button type="submit">Resolved?</button>
 			</form>
-			</div>
+		</div>
 	<% end %>
 		
 <% end %>
