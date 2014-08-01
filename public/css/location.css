@@ -1,0 +1,25 @@
+#work_area{
+	padding: 10px;
+}
+#work_area h6{
+	text-align: center;
+	color: yellow;
+	font-weight: bold;
+}
+table#workstation_spots {
+	margin-left: auto;
+	margin-right: auto;
+}
+table#workstation_spots td{
+	border: 1px solid yellow;
+	height: 50px;
+	width: 200px;
+}
+#work_area li{
+ 	display:block;
+ 	width:20%;
+ 	float:left;
+ 	height:200px;
+ 	border:solid black 2px;
+ 	margin:2px;
+}
