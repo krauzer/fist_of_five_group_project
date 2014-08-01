@@ -10,8 +10,12 @@ $(document).ready(function() {
 		console.log("refresh button works")
 	// window.location.href = window.location.href;  
 
-
 	});
+
+	$('.resolvedButton').click(function(e){
+		e.preventDefault();
+		$('.back').css("background-color", response.color);
+	})
 
 	$('#createTicket').on('click', openForm);
 
