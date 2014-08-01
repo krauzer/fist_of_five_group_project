@@ -13,5 +13,8 @@ $(document).ready(function(){
 			}); // close li.click
 		} // close if statement
 	}); // close form.change
-	$("")
+	$("#rooms").submit(function(e){
+		e.preventDefault();
+		console.log("submitted the form");
+	}) // close rooms.submit
 }); // close document.read
