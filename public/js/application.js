@@ -8,7 +8,54 @@ $(document).ready(function() {
 		setTimeout(refreshTickets, 200);
 
 		console.log("refresh button works")
-	});
+	// window.location.href = window.location.href;  
+  });
+
+  $("#submit_ticket").click(function(e){
+    e.preventDefault();
+    var description = $("input[name=description]").val();
+  $.ajax({
+    url: "/my_tickets",
+    method: "post",
+    data: $('form').serialize()
+  }).success(function(data){
+    console.log("meow it works")
+    //refreshTickets();
+    var node = document.createTextNode(description);
+    var li = document.createElement("li");
+    li.appendChild(node);
+    $("#ticket_history").append(li);
+    window.location.reload();
+  }).fail(function(data){
+    console.log(':(')
+  })
+  })
+
+  $("input[id=remove]").click(function(e){
+    e.preventDefault();
+    console.log("click")
+    var id = $("input[type=hidden]").val();
+    $.ajax({
+      url: "/my_tickets/" + id,
+      method: "delete",
+      data: id
+    }).success(function(data){
+      window.location.reload();
+    })
+  })
+
+    $("input[id=resolved]").click(function(e){
+    e.preventDefault();
+    console.log("click resolve")
+    var id = $("input[type=hidden]").val();
+    $.ajax({
+      url: "my_tickets/" + id,
+      method: "patch",
+      data: id
+    }).success(function(data){
+      window.location.reload();
+    })
+  })
 
 	$('form.resolvedButton').click(function(e){
 		$(this).parent().css("border-color", "#22F322")		

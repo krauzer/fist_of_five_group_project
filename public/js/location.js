@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	for (i=1; i<=42; i++) {
-		$("ul#work_stations").append("<li id='"+i+"''>"+i+"</li>");
+		$("ul#work_stations").append("<li id='"+i+"''></li>");
 	};
 	$("form[name='rooms']").change(function(e){
 		if ($("form[name='rooms'] option:selected").val() == "workstations"){
@@ -10,7 +10,6 @@ $(document).ready(function(){
 				$(this).css("background-color","yellow");
 				var studentLocation = $("form[name='rooms'] option:selected").val().concat(desk);
 				$("form[name='rooms'] option:selected").val( studentLocation );
-				console.log($("form[name='rooms'] option:selected").val());
 			}); // close li.click
 		} // close if statement
 	}); // close form.change
