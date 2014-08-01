@@ -1,9 +1,12 @@
 class User < ActiveRecord::Base
+  has_many :tickets
+  has_many :student_tickets, :class_name => "Ticket", foreign_key: "student_id"
+  has_many :coach_tickets, :class_name => "Ticket", foreign_key: "coach_id"
 
   def initialize
 
 
-  has_many :tickets
+
 
   def self.save_token(access_token)
     self.find_or_create_by(username:            access_token.params[:screen_name],
@@ -22,5 +25,5 @@ class User < ActiveRecord::Base
     :authorize_url => '/o/oauth2/auth'
   end
 
-  en
-end
+
+

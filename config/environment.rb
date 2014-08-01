@@ -23,8 +23,12 @@ require 'oauth2'
 
 require 'sinatra'
 require "sinatra/reloader" if development?
+require 'faker'
 
 require 'erb'
+
+require 'date'
+
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
