@@ -1,3 +1,13 @@
+.container {
+  margin: 20px auto;
+  width: 600px;
+  padding: 0px 20px 20px 20px;
+  border: 1px dotted black;
+  /*height: 100%;*/
+}
+th {
+  text-align: left;
+}
 body{
 	background-color: #20E7E7;
 }
@@ -46,3 +56,10 @@ a {
 	margin-right: 2em;
 }
 
+
+.oneTicket {
+	float: left;
+	width: 200px;
+	border: 1px solid #999;
+	margin: 0 15px 15px 0;
+}

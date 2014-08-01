@@ -1,0 +1,15 @@
+	<% @tickets.each do |ticket| %>
+		<div class="oneTicket">
+			<p>Category: <%= ticket.category %></p>
+			<p>Description: <%=ticket.description %></p>
+				<% if ticket.resolved == true %>
+					<p>Resolved: Yes</p>
+				<% else %>
+					<p>Resolved: No</p>	
+				<% end %>
+			<p>Student: <%= User.find(ticket.student_id).first_name %> <%= User.find(ticket.student_id).last_name %></p>
+			<form id="resolvedButton" method="post" action="/tickets/<%= ticket.id %>" value="<%= ticket.id %>">
+    		<button type="submit">Resolved?</button>
+			</form>
+		</div>
+			<% end %>
