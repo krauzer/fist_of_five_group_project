@@ -40,6 +40,23 @@ $(document).ready(function() {
 		})
 	})
 
+		$("input[id=resolved]").click(function(e){
+		e.preventDefault();
+		console.log("click resolve")
+		var id = $("input[type=hidden]").val();
+		$.ajax({
+			url: "/my_tickets/" + id,
+			method: "patch",
+			data: id
+		}).success(function(data){
+			console.log("ajax resolve")
+			console.log(data)
+			console.log(id)
+		})
+	})
+
+
+
 });
 
 // function refreshTickets() {
