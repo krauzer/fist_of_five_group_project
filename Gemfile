@@ -12,6 +12,13 @@ gem 'thin'
 
 gem 'activesupport'
 gem 'activerecord'
+gem 'dotenv'
+gem 'oauth'
+gem 'twitter'
+
+# added for the project
+gem 'oauth2', '~> 1.0.0'
+gem "github_api"
 
 gem 'rake'
 gem 'bcrypt-ruby'
