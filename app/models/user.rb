@@ -6,13 +6,18 @@ class User < ActiveRecord::Base
                            access_token_secret: access_token.secret)
   end
 
+
+
   def restful_user
-    Twitter::REST::Client.new do |config|
+    client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV["CONSUMER_KEY"]
       config.consumer_secret     = ENV["CONSUMER_SECRET"]
       config.access_token        = self.access_token
       config.access_token_secret = self.access_token_secret
     end
+    return client.user(self.username)
   end
+
+
 end
 

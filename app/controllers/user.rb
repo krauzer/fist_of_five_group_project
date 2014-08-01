@@ -33,6 +33,13 @@ post '/users' do
 end
 
 get '/users/:user_id' do
+  @user = User.find_or_create_by(username: params[:username])
+  @image = @user.restful_user.profile_image_url
+
+
+  #find_by_username(username).profile_image_url
+
+
   erb :"user/profile"
 end
 

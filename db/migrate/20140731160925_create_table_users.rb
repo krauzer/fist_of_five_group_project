@@ -6,8 +6,8 @@ class CreateTableUsers < ActiveRecord::Migration
       t.string :username
       t.string :role_type
       t.string :email
-      t.string :oauth_token
-      t.string :oauth_secret
+      t.string :access_token
+      t.string :access_token_secret
       t.timestamps
     end
   end
