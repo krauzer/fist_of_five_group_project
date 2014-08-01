@@ -5,9 +5,11 @@ $(document).ready(function() {
 	
 	$("form#refreshAll").submit(function(e){
 		e.preventDefault();
-		setTimeout(refreshTickets, 2000);
+		setTimeout(refreshTickets, 700);
 
 		console.log("refresh button works")
+	// window.location.href = window.location.href;  
+
 
 	});
 
@@ -46,8 +48,8 @@ function refreshTickets() {
 		console.log("ajax works");
 		console.log(response)
 		$('.tickets').hide().html(response).fadeIn('fast');
-	}).fail({
-		// console.log("Doesn't not work")
+	}).fail(function(response){
+		console.log("Doesn't not work")
 	})
 }
 
