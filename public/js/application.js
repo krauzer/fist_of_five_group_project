@@ -3,10 +3,11 @@ $(document).ready(function() {
 
 	$('#newTicket').hide();
 	
-	$(".tickets").hover(function(){
-		setTimeout(refreshTickets, 10000);
+	$("form#refreshAll").submit(function(e){
+		e.preventDefault();
+		setTimeout(refreshTickets, 2000);
 
-		console.log("hover works")
+		console.log("refresh button works")
 
 	});
 
@@ -65,12 +66,11 @@ function refreshTickets() {
 	})
 }
 
-function refreshPage(){
-	console.log("refresh page works")
-	window.location.href = window.location.href;  
-
+// function refreshPage(){
+// 	console.log("refresh page works")
+// 	window.location.href = window.location.href;  
 	
-}
+// }
 
 function openForm (event) {
   event.preventDefault();
