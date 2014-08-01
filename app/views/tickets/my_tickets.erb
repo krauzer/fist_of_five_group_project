@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="/css/location.css">
+
 <div class="container">
 
   <body>
@@ -8,9 +10,25 @@
         <br>What do you need help with?<br>
         <br><input type="text" name="description"required></input><br>
         <br>Where are you? Enter the station #.<br>
-        <br><input type="number" name="location" required></input><br>
+        <br><select name="location">
+          <option value="kernel">Kernel</option>
+          <option value="workstations">Workstations</option>
+          <option value="thread">Thread</option>
+          <option value="object">Object</option>
+          <option value="string">String</option>
+        </select><br>
         <br><input type="submit" id="submit_ticket"></input>
       </form>
+
+      <div id="work_area" style="display: none">
+        <div class="room">
+          <h6>THREAD</h6>
+        </div>
+          <ul id="work_stations"></ul>
+        <div class="room">
+          <h6>LOCKERS</h6>
+        </div>
+    </div>
 
     <h2>your tickets</h2>
       <ol id="ticket_history">
@@ -30,3 +48,5 @@
   </body>
 
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="/js/location.js"></script>

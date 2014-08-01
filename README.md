@@ -13,6 +13,12 @@ Teachers and students connected at last!
  
 ### Description of MVP
 
+* Allow students to submit help requests containing the student's name and location in the space along with a brief description of the problem
+
+* Allow coaches/instructors to view all tickets submitted by students
+
+* Allow students and coaches/instructors to log in with Twitter or GitHub
+
 ### Team Dynamic and Git Workflow
 
 ### Links
