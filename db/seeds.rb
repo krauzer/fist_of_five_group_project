@@ -11,5 +11,5 @@ User.create(first_name: "Mo", last_name: "Ramchandani", role_type: "coach", emai
 @categories = ["ActiveRecord", "Sinatra", "RESTful routing", "AJAX", "OOJS", "jQuery", "CSS"]
 
 User.where(role_type: "student").each do |student|
-	3.times { student.tickets << Ticket.create(description: "test ticket", category: @categories.sample) }
+	3.times { student.student_tickets << Ticket.create(description: "test ticket", category: @categories.sample) }
 end
