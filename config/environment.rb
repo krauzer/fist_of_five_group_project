@@ -18,7 +18,7 @@ require 'logger'
 # added for the project
 require 'dotenv'
 Dotenv.load
-require 'oauth'
+require 'oauth2'
 
 
 require 'sinatra'
