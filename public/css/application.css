@@ -83,6 +83,7 @@ a {
 	margin: 0 15px 15px 0;
 	border-radius: 15px;
 	overflow: scroll;
+	height: 200px;
 }
 
 .oneTicketNotResolved {
@@ -93,5 +94,7 @@ a {
 	margin: 0 15px 15px 0;
 	border-radius: 15px;
 	overflow: scroll;
+	height: 200px;
+	
 }
 
