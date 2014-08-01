@@ -13,7 +13,7 @@
       </form>
 
     <h2>your tickets</h2>
-      <ul id="ticket_history">
+      <ol id="ticket_history">
       <!-- querying in view - bad practice - fix later!! -->
       <% Ticket.all.each do |i| %>
       <li><% if i.resolved == false %>
@@ -26,7 +26,7 @@
           <% end %>
       <% end %>
       </li>
-      </ul>
+      </ol>
   </body>
 
 </div>

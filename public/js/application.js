@@ -20,6 +20,7 @@ $(document).ready(function() {
 		var li = document.createElement("li");
 		li.appendChild(node);
 		$("#ticket_history").append(li);
+		window.location.reload();
 	}).fail(function(data){
 		console.log(':(')
 	})
