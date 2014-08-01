@@ -33,6 +33,26 @@ $(document).ready(function() {
     })
   })
 
+ $('#log_out_button').on("click", function (e) {
+    e.preventDefault();
+    $.ajax({
+    	url: $(this).attr('href'),
+    	type: 'delete',
+    })
+    .done(function() {
+    	console.log("success");
+    })
+    .fail(function() {
+    	console.log("error");
+    })
+    .always(function() {
+    	console.log("complete");
+    });
+    
+  });
+
+
+
 });
 
 
