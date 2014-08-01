@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :student_tickets, :class_name => "Ticket", foreign_key: "student_id"
+  has_many :coach_tickets, :class_name => "Ticket", foreign_key: "coach_id"
 
   def self.save_tokens(access_token)
     self.find_or_create_by(username:            access_token.params[:screen_name],
