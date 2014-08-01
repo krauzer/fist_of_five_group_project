@@ -6,22 +6,28 @@
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
   -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/css/normalize.css">
   <!--
     application.css is where you put your styles
   -->
+  <link rel="stylesheet" href="css/font-awesome.min.css">
 
-  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
   <link rel="stylesheet" href="/css/application.css">
 
   <title>Fist To Five</title>
 </head>
+<%= erb :_header %>
 <body>
   
   <%= yield %>
 </body>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
   <script src="/js/application.js"></script>
 </html>
