@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/css/location.css">
+<h3>Where are you?</h3>
+
+<form name="rooms" method="post" action="/TBD">
+	<select>
+		<option value="kernel">Kernel</option>
+		<option value="workstations">Workstations</option>
+		<option value="thread">Thread</option>
+		<option value="object">Object</option>
+		<option value="string">String</option>
+	</select>
+	<input type="submit" value="flag my location">
+</form>
+
+<div id="work_area" style="display: none">
+	<div class="room">
+		<h6>THREAD</h6>
+	</div>
+		<ul id="work_stations"></ul>
+	<div class="room">
+		<h6>LOCKERS</h6>
+	</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="/js/location.js"></script>
