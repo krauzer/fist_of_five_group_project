@@ -18,7 +18,8 @@ get '/my_tickets' do
 end
 
 post '/my_tickets' do
-  p "in controller"
+  # Need to create with user once login/out is implemented.
+  # Extra feature: add category as well
   Ticket.create(description: params[:description])
   return "added ticket"
   erb :my_tickets

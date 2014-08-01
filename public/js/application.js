@@ -6,13 +6,16 @@ $(document).ready(function() {
 
 	$("#submit_ticket").click(function(e){
 		e.preventDefault();
+		var description = $("input[name=description]").val();
+		var location = $("input[name=location]").val();
 	$.ajax({
 		url: "/my_tickets",
 		method: "post",
 		data: $('form').serialize()
 	}).success(function(data){
-		console.log("meow")
-		console.log(data)
+		console.log("meow it works")
+		console.log(description)
+		console.log(location)
 	}).fail(function(data){
 		console.log(':(')
 	})
