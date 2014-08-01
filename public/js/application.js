@@ -8,10 +8,11 @@ $(document).ready(function() {
 		setTimeout(refreshTickets, 200);
 
 		console.log("refresh button works")
-	// window.location.href = window.location.href;  
-
-
 	});
+
+	$('form.resolvedButton').click(function(e){
+		$(this).parent().css("border-color", "#22F322")		
+	})
 
 	$('#createTicket').on('click', openForm);
 
@@ -50,8 +51,6 @@ $(document).ready(function() {
     });
     
   });
-
-
 
 });
 
