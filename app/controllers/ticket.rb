@@ -20,8 +20,14 @@ end
 post '/my_tickets' do
   # Need to create with user once login/out is implemented.
   # Extra feature: add category as well
-  Ticket.create(description: params[:description])
+  Ticket.create(student_id: 1, description: params[:description])
   return "added ticket"
   erb :my_tickets
+end
+
+delete '/my_tickets/:id' do
+  puts params[:id].to_i
+  Ticket.find(id).destroy
+  return "removed ticket"
 end
 
