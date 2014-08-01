@@ -3,9 +3,11 @@ $(document).ready(function() {
 
 	$('#newTicket').hide();
 	
-	$(".oneTicket").mouseover(function(){
+	$(".tickets").hover(function(){
 		setTimeout(refreshTickets, 10000);
+
 		console.log("mouseover works")
+
 	});
 
 	$('#createTicket').on('click', openForm);
@@ -32,19 +34,18 @@ $(document).ready(function() {
 
 
 function refreshTickets() { 
-	// window.location.href = window.location.href;  //BUGBUG
-	// var randomNumber = Math.floor(Math.random() * 100);
-	// $('#tickets').html("Hello " + randomNumber);
-	console.log("works")
+	// window.location.href = window.location.href;  
+	console.log("refresh tickets works")
+
 	$.ajax({
-		type: 'get',
+		type: 'post',
 		url: '/tickets',
 		data: $(this).serialize()
 	}).success(function(response){
-		console.log("works");
+		console.log("ajax works");
 		console.log(response)
-		$('#tickets').empty();
-		$('#tickets').html(response);
+		// $('#tickets').empty();
+		$('.tickets').hide().html(response).fadeIn('fast');
 	}).fail({
 		// console.log("Doest not work")
 	})
