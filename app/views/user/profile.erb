@@ -1,0 +1,20 @@
+<div class="container">
+  <h3>Profile ?</h3>
+  <div class="row _tickets">
+
+  	<form id="profile" action="/user/<%= @user.id %>/" method="POST">
+  	<label></label>
+     <input type="text" size="35" name="card[question]"><br>
+     <input type="text" size="35" name="card[choice1]"><br>
+    <label></label>
+     <input type="text" size="35" name="card[choice2]"><br>
+    <label></label>
+     <input type="text" size="35" name="card[choice3]"><br>
+    <label></label>
+  <input type="text"  size="28" name="card[answer]"><br><br>
+    <input type="submit" value="Create New Card">
+ 
+  </form>	
+   
+  </div>
+</div>
