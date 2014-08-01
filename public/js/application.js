@@ -11,7 +11,7 @@ $(document).ready(function() {
 	});
 
 	$('form.resolvedButton').click(function(e){
-		$(this).parent().css("border-color", "#FF0000")		
+		$(this).parent().css("border-color", "#22F322")		
 	})
 
 	$('#createTicket').on('click', openForm);
