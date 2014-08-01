@@ -1,20 +1,17 @@
 <div class="container">
-  <h3>Profile ?</h3>
-  <div class="row _tickets">
+  <h3>Profile </h3>
+  <div class="_tickets">
+    <div id="ticket_sub">
+    <% @user = User.find(params[:user_id]) %>
+    <h2 class="label"><%= @user.first_name %> <%= @user.last_name %></h2>
+    <h4 class="label"><%= @user.role_type.capitalize %></h4>
 
-  	<form id="profile" action="/user/<%= @user.id %>/" method="POST">
-  	<label></label>
-     <input type="text" size="35" name="card[question]"><br>
-     <input type="text" size="35" name="card[choice1]"><br>
-    <label></label>
-     <input type="text" size="35" name="card[choice2]"><br>
-    <label></label>
-     <input type="text" size="35" name="card[choice3]"><br>
-    <label></label>
-  <input type="text"  size="28" name="card[answer]"><br><br>
-    <input type="submit" value="Create New Card">
- 
-  </form>	
-   
+    <img src="http://www.gravatar.com/avatar/<%= gravatar_hash(@user.email) %>">
+
+    <a href="mailto:<%= @user.email %>">Email <%= @user.first_name %></a>
+  </div>
   </div>
 </div>
+
+
+
