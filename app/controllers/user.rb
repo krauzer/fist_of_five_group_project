@@ -42,3 +42,12 @@ end
 get '/users/:user_id/tickets/:ticket_id' do
   
 end
+
+delete '/users/:user_id' do 
+return 401 unless params[:user_id].to_i == session[:user_id].to_i
+  session.clear
+end
+
+
+
+
