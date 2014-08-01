@@ -18,6 +18,12 @@
   <title>Fist To Five</title>
 </head>
 <body>
+<% current_user %>
+<% if @user.nil? %>
+  <%= erb :_login_signup %>
+<% else %>
+  <%= erb :_logout %>
+<% end %>
   <%= yield %>
 </body>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
