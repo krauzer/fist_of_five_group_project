@@ -3,8 +3,9 @@ $(document).ready(function() {
 
 	$('#newTicket').hide();
 	
-	$("#tickets").mouseover(function(){
-		setTimeout(refreshTickets, 1000);
+	$(".oneTicket").mouseover(function(){
+		setTimeout(refreshTickets, 10000);
+		console.log("mouseover works")
 	});
 
 	$('#createTicket').on('click', openForm);
@@ -30,23 +31,23 @@ $(document).ready(function() {
 });
 
 
-function refreshTickets(e) { 
-	e.preventDefault();
+function refreshTickets() { 
 	// window.location.href = window.location.href;  //BUGBUG
-	var randomNumber = Math.floor(Math.random() * 100);
-	$('#tickets').html("Hello " + randomNumber);
-
-	// $.ajax({
-	// 	type: 'get',
-	// 	url: '/tickets',
-	// 	data: $(this).serialize()
-	// }).success(function(response){
-	// 	console.log("works")
-	// 	console.log(response)
-	// }).fail({
-	// 	console.log("works")
-	// 	console.log(response)
-	// })
+	// var randomNumber = Math.floor(Math.random() * 100);
+	// $('#tickets').html("Hello " + randomNumber);
+	console.log("works")
+	$.ajax({
+		type: 'get',
+		url: '/tickets',
+		data: $(this).serialize()
+	}).success(function(response){
+		console.log("works");
+		console.log(response)
+		$('#tickets').empty();
+		$('#tickets').html(response);
+	}).fail({
+		// console.log("Doest not work")
+	})
 }
 
 function openForm (event) {
