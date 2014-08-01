@@ -32,9 +32,12 @@ post '/users' do
   end
 end
 
+
+#profile page
 get '/users/:user_id' do
   erb :"user/profile"
 end
+
 
 get '/users/:user_id/tickets/:ticket_id' do
   
