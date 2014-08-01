@@ -2,13 +2,15 @@
 		<div class="oneTicket">
 			<p><span class="label">Category:</span> <%= ticket.category %></p>
 			<p><span class="label">Description: </span><%=ticket.description %></p>
+
 				<% if ticket.resolved == true %>
-					<p><span class="label">Resolved:</span> Yes</p>
+					<p><span class="label" value="resolved">Resolved:</span> Yes</p>
 				<% else %>
-					<p><span class="label">Resolved:</span> No</p>	
+					<p><span class="label" value="not-resolved">Resolved:</span> No</p>	
 				<% end %>
+
 			<p><span class="label">Student:</span> <%= User.find(ticket.student_id).first_name %> <%= User.find(ticket.student_id).last_name %></p>
-			<form class="resolvedButton" method="post" action="/tickets/<%= ticket.id %>" value="<%= ticket.id %>">
+			<form class="resolvedButton" name="resolved" method="post" action="/tickets/<%= ticket.id %>" value="<%= ticket.id %>">
     		<button type="submit">Resolved?</button>
 			</form>
 		</div>

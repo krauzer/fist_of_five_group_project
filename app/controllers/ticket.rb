@@ -20,9 +20,9 @@ end
 
 post '/tickets/:id' do #route for coach to mark a ticket as resolved
 	@ticket = Ticket.find(params[:id])
-	@ticket.resolved = true
-	@ticket.save
-	# erb :'partials/_all_tickets'
+	@ticket.resolved = true; @ticket.save
+	@tickets = Ticket.fresh
+	# erb :'partials/_all_tickets', :layout => false
 	redirect '/tickets'
 end
 

@@ -1,20 +1,38 @@
 $(document).ready(function() {
 	console.log("works")
 
+	var ticket_id;
+
 	$('#newTicket').hide();
+
+	if ($('span.label').attr('value') == "resolved") {
+		$(this).parent().parent().css("border-color", "#FF0000")
+	}
 	
 	$("form#refreshAll").submit(function(e){
 		e.preventDefault();
 		setTimeout(refreshTickets, 200);
 
 		console.log("refresh button works")
-	// window.location.href = window.location.href;  
-
 	});
 
-	$('.resolvedButton').click(function(e){
-		e.preventDefault();
-		$('.back').css("background-color", response.color);
+	$('form.resolvedButton').click(function(e){
+		// e.preventDefault();
+		$(this).parent().css("border-color", "#FF0000")
+		// ticket_id = $(this).attr('value')
+		
+		// console.log("resolved button works");
+		// $.ajax ({
+		// 	type:'post',
+		// 	url: '/tickets/'+ticket_id+'',
+		// 	data: $(this).serialize()
+		// }).success(function(response){
+		// 	// console.log("works");
+		// 	// console.log(response)
+		// 	$('.tickets').hide().html(response).fadeIn('fast');
+		// }).fail(function(response){
+		// 	console.log("doesn't work")
+		// })
 	})
 
 	$('#createTicket').on('click', openForm);
