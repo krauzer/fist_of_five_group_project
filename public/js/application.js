@@ -11,20 +11,6 @@ $(document).ready(function() {
 
 	});
 
-	// $('form#resolvedButton').submit(function(e){
-	// 	e.preventDefault();
-	// 	console.log("resolved button works")
-	// 	console.log($('form#resolvedButton').attr("value"));
-	// 	$.ajax({
-	// 	type: 'post',
-	// 	url: '/tickets/:id'
-	// 	}).success(function(response){
-	// 		console.log("works");
-	// 	}).fail(function(response){
-	// 		console.log("doesn't work")
-	// 	})
-	// });
-
 	$('#createTicket').on('click', openForm);
 
 	$('form#addTicket').submit(function(e) {
@@ -59,18 +45,11 @@ function refreshTickets() {
 	}).success(function(response){
 		console.log("ajax works");
 		console.log(response)
-		// $('#tickets').empty();
 		$('.tickets').hide().html(response).fadeIn('fast');
 	}).fail({
-		// console.log("Doest not work")
+		console.log("Doesn't not work")
 	})
 }
-
-// function refreshPage(){
-// 	console.log("refresh page works")
-// 	window.location.href = window.location.href;  
-	
-// }
 
 function openForm (event) {
   event.preventDefault();
