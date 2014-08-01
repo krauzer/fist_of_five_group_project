@@ -8,7 +8,7 @@
 					<p>Resolved: No</p>	
 				<% end %>
 			<p>Student: <%= User.find(ticket.student_id).first_name %> <%= User.find(ticket.student_id).last_name %></p>
-			<form method="post" action="/tickets/<%= ticket.id %>">
+			<form id="resolvedButton" method="post" action="/tickets/<%= ticket.id %>" value="<%= ticket.id %>">
     		<button type="submit">Resolved?</button>
 			</form>
 		</div>
