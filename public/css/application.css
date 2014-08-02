@@ -131,8 +131,20 @@ section{
 	overflow: scroll;
 	height: 220px;
 }
+
+/*model css*/
 .modal-body{
 	background-color: #366DEB;
 	color: black;
+}
+
+td{
+	font-size: 22px;
+	width: 200px;
+	text-align: left;
+	color: #585858;
+}
+td:nth-child(even){
+	color: white;
 }
 

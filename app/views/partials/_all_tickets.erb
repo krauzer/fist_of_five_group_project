@@ -6,7 +6,7 @@
 			<span class="label">Student:</span><p class="mStud"> <%= User.find(ticket.student_id).first_name %> <%= User.find(ticket.student_id).last_name %></p>
 		</div>
 	<% else %>				
-		<div class="oneTicketNotResolved" >
+		<div class="oneTicketNotResolved" >	
 			<span class="label">Category: </span><p class="mCat"><%=ticket.category %></p>
 			<span class="label">Description: </span><p class="mDesc"><%=ticket.description %></p><span class="label" value="not-resolved">Resolved: </span><p class="mRes">no</p>	
 			<span class="label">Student:</span><p class="mStud"> <%= User.find(ticket.student_id).first_name %> <%= User.find(ticket.student_id).last_name %></p>

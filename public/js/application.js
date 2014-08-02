@@ -99,8 +99,8 @@ $(document).ready(function() {
     
   });
 
+ // listener for individual ticket on _all_ticket.erb
 var ticket = document.querySelector("#ticket_sub");
-console.log(ticket)
 ticket.addEventListener("click", individualTicket); 
 
 });
@@ -128,26 +128,24 @@ function openForm (event) {
   $('#newTicket').show();
 };
 
+// modal view
 function individualTicket (event){
   var category = event.target.querySelector(".mCat").innerHTML
   var description = event.target.querySelector(".mDesc").innerHTML
   var resolved = event.target.querySelector(".mRes").innerHTML
   var student = event.target.querySelector(".mStud").innerHTML
 
-
-
-  console.log("event target")
-  console.log(category);
-  // console.log(html[0].innerText);
+  // console.log("event target")
+  // console.log(category);
+  // console.log(description);
+  // console.log(resolved);
+  // console.log(student);
 
   console.log("modal stuff")
-  var modal = document.querySelector("#myModal");
-  var mBody = modal.querySelector(".modal-body");
-  console.log(modal)
+  var mBody = document.querySelector(".modal-body");
+
   mBody.querySelector(".mCat").innerHTML = category
   mBody.querySelector(".mDesc").innerHTML = description
   mBody.querySelector(".mRes").innerHTML = resolved
   mBody.querySelector(".mStud").innerHTML = student
-
-  // if event.target.class === 
 }
