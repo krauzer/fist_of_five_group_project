@@ -147,6 +147,9 @@ section{
 .modal-body td:nth-child(even){
 	color: white;
 }
+ td button{
+ 	color: black;
+ }
 /*all individual tickets*/
 .oneTicketNotResolved, .oneTicketResolved, td{
 	font-size: 16px;

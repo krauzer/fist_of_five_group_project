@@ -55,8 +55,9 @@
 					</td>
 				</tr>
 				<tr>
+					<td><button type="submit" data-toggle="modal" data-target="#myModal" class="tick-view">view</button></td>
 					<td colspan="2"><form class="resolvedButton" name="resolved" method="post" action="/tickets/<%= ticket.id %>" value="<%= ticket.id %>">
-    				<button type="submit">Close Ticket</button>
+    				<button type="submit">close ticket</button>
 					</form></td>
 				</tr>		
 			</table>
