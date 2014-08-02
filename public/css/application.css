@@ -138,13 +138,22 @@ section{
 	color: black;
 }
 
-td{
+.modal-body td{
 	font-size: 22px;
 	width: 200px;
 	text-align: left;
 	color: #585858;
 }
-td:nth-child(even){
+.modal-body td:nth-child(even){
+	color: white;
+}
+/*all individual tickets*/
+.oneTicketNotResolved, .oneTicketResolved, td{
+	font-size: 16px;
+	text-align: left;
+	color: #585858;
+}
+.oneTicketNotResolved, .oneTicketResolved, td:nth-child(even){
 	color: white;
 }
 

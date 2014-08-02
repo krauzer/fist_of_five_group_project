@@ -1,29 +1,65 @@
 <% @tickets.each do |ticket| %>
 	<% if ticket.resolved == true %>
 	<div class="oneTicketResolved">
-			<span class="label">Category: </span><p class="mCat"><%=ticket.category %></p>
-			<span class="label">Description: </span><p class="mDesc"><%=ticket.description %></p><span class="label" value="not-resolved">Resolved: </span><p class="mRes">no</p>	
-			<span class="label">Student:</span><p class="mStud"> <%= User.find(ticket.student_id).first_name %> <%= User.find(ticket.student_id).last_name %></p>
+			<table>
+				<tr>
+					<td>Category:</td>
+					<td class="mCat"><%=ticket.category %></td>
+				</tr>	
+				<tr>
+					<td>Description:</td>
+					<td class="mDesc"><%=ticket.description %></td>
+				</tr>	
+				<tr>
+					<td>Resolved:</td>
+					<td class="mRes">No</td>
+				</tr>	
+				<tr>
+					<td>Student:</td>
+					<td class="mStud"><%= User.find(ticket.student_id).first_name %> <%= User.find(ticket.student_id).last_name %></td>
+				</tr>	
+			</table>
 		</div>
 	<% else %>				
 		<div class="oneTicketNotResolved" >	
-			<span class="label">Category: </span><p class="mCat"><%=ticket.category %></p>
-			<span class="label">Description: </span><p class="mDesc"><%=ticket.description %></p><span class="label" value="not-resolved">Resolved: </span><p class="mRes">no</p>	
-			<span class="label">Student:</span><p class="mStud"> <%= User.find(ticket.student_id).first_name %> <%= User.find(ticket.student_id).last_name %></p>
-			<% unless ticket.location.nil? %>
-			<span class="label">Student Location:</span><p class="mLoc"> <%= ticket.location %></p>
-			<% end %>
-			<p><span class="label">Created: </span>
-				<% if ticket.age[0] != 0 %>
-				<%= ticket.age[0] %> hrs, 
-				<%= ticket.age[1] %> min ago
-				<% else %>
-				<%= ticket.age[1] %> minutes ago
-				<% end %>
-			</p>
-			<form class="resolvedButton" name="resolved" method="post" action="/tickets/<%= ticket.id %>" value="<%= ticket.id %>">
-    		<button type="submit">Resolved?</button>
-			</form>
+			<table>
+				<tr>
+					<td>Category:</td>
+					<td class="mCat"><%=ticket.category %></td>
+				</tr>	
+				<tr>
+					<td>Description:</td>
+					<td class="mDesc"><%=ticket.description %></td>
+				</tr>	
+				<tr>
+					<td>Resolved:</td>
+					<td class="mRes">No</td>
+				</tr>	
+				<tr>
+					<td>Student:</td>
+					<td class="mStud"><%= User.find(ticket.student_id).first_name %> <%= User.find(ticket.student_id).last_name %></td>
+				</tr>	
+				<tr>
+					<td>Location:</td>
+					<td class="mLoc"><%= ticket.location %></td>
+				</tr>
+				<tr>
+					<td>Created:</td>
+					<td class="mLoc">		
+						<% if ticket.age[0] != 0 %>
+							<%= ticket.age[0] %> hrs, 
+							<%= ticket.age[1] %> min ago
+						<% else %>
+							<%= ticket.age[1] %> minutes ago
+						<% end %>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2"><form class="resolvedButton" name="resolved" method="post" action="/tickets/<%= ticket.id %>" value="<%= ticket.id %>">
+    				<button type="submit">Close Ticket</button>
+					</form></td>
+				</tr>		
+			</table>
 		</div>
 	<% end %>	
 <% end %>
