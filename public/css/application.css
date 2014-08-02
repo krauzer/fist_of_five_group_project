@@ -66,9 +66,8 @@ ul li {
 	color:black;
 }
 #container_header{
-	position:fixed;
 	background-color: #0341D0;
-	width: 80.5%;
+	width: 100%;
 	border-radius: 15px;
 	box-shadow: 1px 1px 1px #888888;
 	text-align: bottom;
@@ -131,6 +130,9 @@ section{
 	border-radius: 15px;
 	overflow: scroll;
 	height: 220px;
-	
+}
+.modal-body{
+	background-color: #366DEB;
+	color: black;
 }
 
