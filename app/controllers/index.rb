@@ -7,6 +7,15 @@ get '/sign_in' do
   # the `request_token` method is defined in `app/helpers/oauth.rb`
   redirect request_token.authorize_url
 end
+ 
+post '/sign_up' do
+  # the `request_token` method is defined in `app/helpers/oauth.rb`
+  p @user = User.create(params[:user])
+ p  session[:user_id] = @user.id
+
+
+ redirect "/users/#{@user.id}/edit"
+end
 
 get '/sign_out' do
   session.clear

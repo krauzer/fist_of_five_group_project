@@ -1,9 +1,14 @@
 get '/tickets' do #route for coaches to see all tickets
 	@tickets = Ticket.fresh
 	p @tickets
+	# @user = User.find(session[:user_id])
 
-	@students = User.where(role_type: "student")
-	erb :'tickets/all'
+	# if @user.role_type == "student" 
+		# @tickets = Ticket.where(student_id: session[:user_id])
+		# erb :'tickets/my_tickets'
+	# else	
+	redirect ('/tickets')
+	# end
 end
 
 post '/tickets' do

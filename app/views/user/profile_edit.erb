@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="_tickets">
+    <div id="update-form">
+      <form id="form-update" method="post" action="/users/<%=@user.id%>/edit"><br>
+      <input type="hidden" name="_method" value="PATCH"><br>
+      <label class="label" for="first_name">First Name</label>
+      <input type="text" id="username" name="user[first_name]" placeholder="ex Dylan" value="<%=@user.first_name%>" require><br>
+      <label class="label" for="last_name">Last Name</label>
+      <input type="text" id="lastname" name="user[last_name]" placeholder="ex Edwards" value="<%=@user.last_name%>" require>
+      <span id="name-errors" class="errors"></span><br>
+      <label class="label" for="username">Username</label>
+      <input type="text" id="username" name="user[username]" value="<%=@user.username %>" require>
+      <br>
+      <label class="label" for="email">Email</label>
+      <input type="email" id="email" name="user[email]" value="<%=@user.email%>"readonly><br>
+      <span id="email-errors" class="errors"></span>
+      <br>
+      <label class="label">Role Type</label><br>
+      <input type="radio" name="user[role_type]" value="student">Student
+      <input type="radio" name="user[role_type]" value="coach">Instructor/Coach<br>
+      <input type="submit" value="Update "><br>
+    </form>
+  </div>
+  </div>
+</div>

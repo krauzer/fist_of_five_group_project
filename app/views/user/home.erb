@@ -1,6 +1,36 @@
 <div class="container">
 
-  <div id="home">
-   
+  <div id="validate">
+	  <h1>Sign Up</h1>
+	  <form id="_sign-up" method="post" action="/sign_up">
+	    <label class="label" for="username">Name</label>
+	    <input type="text" id="username" name="user[username]" placeholder="e.g., dylan" require>
+	    <span id="name-errors" class="errors"></span>
+	    <br>
+	    <label class="label" for="email">Email</label>
+	    <input type="email" id="email" name="user[email]" placeholder="dylan@example.com" require>
+	    <span id="email-errors" class="errors"></span>
+	    <br>
+	    <label class="label" for="password">Password</label>
+	    <input type="password" id="password" name="user[password]" placeholder="6 or more characters" require>
+	    <span id="entered_password-errors" class="errors"></span>    
+	    <br>
+	    <input type="submit" value="Sign Up">
+	  </form>
+  </div>
+
+  <div id="validate-login">
+	  <h1>Login</h1>
+	  <form id="_login" method="post" action="/login">
+	    <label class="label" for="email">Email</label>
+	    <input type="email" name="user[email]" placeholder="dylan@example.com" require>
+	    <span id="email-errors" class="errors"></span>
+	    <br>
+	    <label class="label" for="password">Password</label>
+	    <input type="password" name="user[password]" placeholder="6 or more characters" require>
+	    <span id="entered_password-errors" class="errors"></span>    
+	    <br>
+	    <input type="submit" value="Login">
+	  </form>
   </div>
 </div>

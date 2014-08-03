@@ -5,6 +5,7 @@ th {
 body{
 	background-color: #20E7E7;
 }
+
 .label{
 	font-size: 1em;
 	color:#00EEEE;
@@ -27,21 +28,43 @@ body{
 	color: white
 }
 
+#validate{
+	display: none;
+	position: fixed;
+	top: 100px;
+	right: 150px;
+	background: white;
+	border: #3D3C3A;
+	border-radius: 7px;
+	padding: 10px;
+	box-shadow: 2px 2px 10px #888888;
+}
+#validate-login{
+	display: none;
+	position: fixed;
+	top: 50px;
+	right: 150px;
+	background: white;
+	border: #3D3C3A;
+	border-radius: 7px;
+	padding: 10px;
+	box-shadow: 2px 2px 10px #888888;
+}
+#update-form{
+	color: #022679;
+	background-color: #00C6C6;
+	border: 1px solid #0341D0;
+	border-radius: 15px;
+	padding: 0em 1em 1em 1em;
+	width: 400px;
+	margin: 3em;
+}
+
+
 p{
 	color: white;
 }
-#home{
-	height: 600px;
-	width: 1400px;
-	border: 1px solid #0341D0;
-	box-shadow: 2px 2px 10px #888888;
-	background-image:url("http://upload.wikimedia.org/wikipedia/commons/4/49/Notophthalmus_viridescensPCCA20040816-3983A.jpg");
-	background-repeat: none;
-	background-position: right top;
-	margin-top: -3px;
-	margin-left: -80px;
 
-}
 ._tickets{
 	margin: auto;
 	margin-top: 2em;
@@ -72,6 +95,9 @@ ul li {
 	box-shadow: 1px 1px 1px #888888;
 	text-align: bottom;
 }
+#container_header ul{
+	padding: 5px;
+}
 
 #ticket_sub{
 	margin-top: 5em;
@@ -83,31 +109,32 @@ a {
 	font-size: 1.7em;
 	margin-right: 2em;
 }
-aside{
-	float: right;
-	background-color: #366DEB;
-	border: 1px solid #0341D0;
-	border-radius: 15px;
-	padding: 1em;
-	margin-right: 2em;
-}
+
 section{
+	clear: both;
 	width: 70%;
 	margin-top: 2em;
-	margin-left: 2em;
+	margin: auto;
 	background-color: #366DEB;
 	border: 1px solid #0341D0;
 	padding: 1em;
 	border-radius: 15px;
 	box-shadow: 1px 1px 1px #888888;
 }
-#profile{
+.profile{
 	color: #022679;
 	background-color: #00C6C6;
 	border: 1px solid #0341D0;
 	border-radius: 15px;
 	padding: 1em;
 	width: 300px;
+	height: 300px;
+	margin-top: 2em;
+	margin-left: 2em;
+	margin-bottom: 2em;
+	float: left;
+	clear: right;
+	
 }
 
 .oneTicketResolved {

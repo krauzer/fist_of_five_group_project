@@ -98,17 +98,51 @@ $(document).ready(function() {
     });
     
   });
+// valitdation sign-up login
+  var signUp = document.querySelector("#signUp");
+  signUp.addEventListener("click", validate);
 
- // // listener for individual ticket on _all_ticket.erb
-  var ticket = document.querySelector("#ticket_sub");
-  ticket.addEventListener("click", individualTicket); 
+  // var _signUp = document.querySelector("#_sign-up");
+  // _signUp.addEventListener("submit", signUP)
+ 
+  var signUp = document.querySelector("#login");
+  signUp.addEventListener("click", validate_login);
 
-
+  // listener for individual ticket on _all_ticket.erb
+  // var ticket = document.querySelector("#ticket_sub");
+  // ticket.addEventListener("click", individualTicket); 
+ 
 });
-  var tick = document.querySelector(".tick-view");
-  tick.addEventListener("click", individualTicket); 
+  // var tick = document.querySelector(".tick-view");
+  // tick.addEventListener("click", individualTicket); 
 
-
+// user authentication signUp
+function validate(){
+  var val = document.querySelector("#validate");
+  val.style.display='block';  
+}
+function validate_login(){
+  var val = document.querySelector("#validate-login");
+  val.style.display='block';  
+}
+function signUP(e){
+  e.preventDefault();
+  console.log(e.target);
+  var username = e.target.querySelector("#username").value;
+  var email = e.target.querySelector("#email").value;
+  var password = e.target.querySelector("#password").value;
+  $.ajax({
+    type: 'post',
+    url: '/sign_in',
+    data: { user:{username: username, email: email, password: password}}
+  }).success(function(response){
+    console.log("ajax works");
+    console.log(response)
+    // $('#ticket_sub').hide().html(response).fadeIn('fast');
+  }).fail(function(response){
+    console.log("Doesn't not work")
+  })
+}
 function refreshTickets() { 
 	// window.location.href = window.location.href;  
 	// console.log("refresh tickets works")

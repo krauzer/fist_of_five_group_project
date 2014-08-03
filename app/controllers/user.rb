@@ -18,31 +18,46 @@ post '/user/login' do
   end
 end
 
-post '/users' do
-	#create new user
-	 # sign-up
-  @user = User.new params[:user]
-  if @user.save
-    # successfully created new account; set up the session and redirect
-    session[:user_id] = @user.id
-    redirect '/'
-  else
-    # an error occurred, re-render the sign-up form, displaying errors
-    erb :"user/sign_up"
-  end
-end
+# post '/users' do
+# 	#create new user
+# 	 # sign-up
+#    @user = User.new params[:user]
+#   if @user.save
+#     # successfully created new account; set up the session and redirect
+#     session[:user_id] = @user.id
+#     redirect '/'
+#   else
+#     # an error occurred, re-render the sign-up form, displaying errors
+#     erb :"user/sign_up"
+#   end
+# end
 
 
 #profile page
+
 get '/users/:user_id' do
-  @user = User.find_or_create_by(username: params[:username])
-  @image = @user.restful_user.profile_image_url
+  @user = User.find(session[:user_id])
+  # @image = @user.restful_user.profile_image_url
 
 
   #find_by_username(username).profile_image_url
 
 
   erb :"user/profile"
+end
+patch '/users/:user_id/edit' do 
+  @user = User.find(params[:user_id])
+  p params[:user]
+  @user.update_attributes(params[:user])
+  @user.save
+  p @user
+  redirect "/users/#{@user.id}" 
+  
+end  
+
+get '/users/:user_id/edit' do
+  @user = User.find(session[:user_id])
+  erb :"user/profile_edit"
 end
 
 get '/users/:user_id/tickets' do 
