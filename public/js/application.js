@@ -109,12 +109,12 @@ $(document).ready(function() {
   signUp.addEventListener("click", validate_login);
 
   // listener for individual ticket on _all_ticket.erb
-  // var ticket = document.querySelector("#ticket_sub");
-  // ticket.addEventListener("click", individualTicket); 
+  var ticket = document.querySelector("#ticket_sub");
+  ticket.addEventListener("click", individualTicket); 
  
 });
-  // var tick = document.querySelector(".tick-view");
-  // tick.addEventListener("click", individualTicket); 
+  var tick = document.querySelector(".tick-view");
+  tick.addEventListener("click", individualTicket); 
 
 // user authentication signUp
 function validate(){
