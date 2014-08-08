@@ -1,79 +1,32 @@
 get '/sign_in' do
-  # the `request_token` method is defined in `app/helpers/oauth.rb`
-  redirect request_token.authorize_url
+  # this part works, I think
+  @state="somenonsense"
+  redirect "https://github.com/login/oauth/authorize?client_id=#{ENV['CLIENT_ID']}&redirect_uri=http://127.0.0.1:9393/auth&scope=user&state=#{@state}"
 end
 
-post '/user/login' do
-	#Set user from login form
-	  @email = params[:email]
-  user = User.authenticate(@email, params[:password])
-  if user
-    # successfully authenticated; set up session and redirect
-    session[:user_id] = user.id
-    redirect '/'
-  else
-    # an error occurred, re-render the sign-in form, displaying an error
-    @error = "Invalid email or password."
-    erb :"user/login"
-  end
-end
-
-post '/users' do
-	#create new user
-	 # sign-up
-  @user = User.new params[:user]
-  if @user.save
-    # successfully created new account; set up the session and redirect
-    session[:user_id] = @user.id
-    redirect '/'
-  else
-    # an error occurred, re-render the sign-up form, displaying errors
-    erb :"user/sign_up"
-  end
-end
-
-
-#profile page
-get '/users/:user_id' do
-  @user = User.find_or_create_by(username: params[:username])
-  @image = @user.restful_user.profile_image_url
-
-
-  #find_by_username(username).profile_image_url
-
-
-  erb :"user/profile"
-end
-
-
-get '/users/:user_id/tickets/:ticket_id' do
-
-end
-
-
-get '/sign_out' do
-  session.clear
-  redirect '/'
+post '/auth' do
+  @code = params[:code]
+  state = params[:state]
+  redirect "https://github.com/login/oauth/access_token?client_id=#{ENV['CLIENT_ID']}&client_secret=#{ENV['CLIENT_SECRET']}&code=@code&redirect_uri=http://127.0.0.1:9393/landing_page" if state == @state
 end
 
 get '/auth' do
-  # the `request_token` method is defined in `app/helpers/oauth.rb`
-  @access_token = request_token.get_access_token(:oauth_verifier => params[:oauth_verifier])
-  # our request token is only valid until we use it to get an access token, so let's delete it from our session
-  session.delete(:request_token)
-
-  # at this point in the code is where you'll need to create your user account and store the access token
-  user = User.save_tokens(@access_token)
-  session[:user_id] = user.id
-  erb :index
-
+  @access_token = params[:access_token]
+  @user = User.find_or_create_by(access_token: @access_token)
+  session[:user_id] = @user.id
+  erb :'user/home'
 end
 
-  
+get '/landing_page' do
+  @access_token = params[:access_token]
+  @user = User.find_or_create_by(access_token: @access_token)
+  session[:user_id] = @user.id
+  erb :'tickets/all'
+end
 
-delete '/users/:user_id' do 
-return 401 unless params[:user_id].to_i == session[:user_id].to_i
-  session.clear
+post '/logout' do
+  session[:user_id] = nil
+  redirect '/'
 end
 
 
